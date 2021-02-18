@@ -5,11 +5,14 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBRangeKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 import org.springframework.data.annotation.Id;
 
+import javax.validation.constraints.NotBlank;
+
 @DynamoDBTable(tableName="to-do-list.backlogs")
 public class Backlog {
     
     @Id
     private BacklogKey backlogKey;
+    @NotBlank
     private String description;
     private boolean ongoing;
 

@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -25,7 +26,7 @@ public class BacklogController {
     }
 
     @PostMapping("/backlog")
-    public Backlog addIdea(@RequestBody Backlog backlog) {
+    public Backlog addIdea(@RequestBody @Valid Backlog backlog) {
         if (StringUtils.isEmpty(backlog.getUserId())) {
             backlog.setUserId(DEFAULT_USER_ID);
         }
