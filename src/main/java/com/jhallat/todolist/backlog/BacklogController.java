@@ -32,7 +32,6 @@ public class BacklogController {
         if (StringUtils.isEmpty(backlog.getCreatedTimestamp())) {
             backlog.setCreatedTimestamp(timestampGenerator.generateFromNow());
         }
-        System.out.println(backlog);
         return backlogRepository.save(backlog);
     }
 
